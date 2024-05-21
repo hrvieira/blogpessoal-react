@@ -1,6 +1,19 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
 
-function Header() {
+
+function Navbar() {
+
+    const navigate = useNavigate()
+
+    const { handleLogout } = useContext(AuthContext);
+
+    function logout() {
+        handleLogout();
+        alert("O usuário foi desconectado com sucesso!");
+        navigate('/login')
+    }
 
     return (
         <div className="bg-indigo-900 flex justify-center ">
@@ -10,7 +23,7 @@ function Header() {
                 </div>
                 <div className="flex text-center justify-end  items-center">
                     <nav>
-                        <ul className="flex items-center gap-2 justify-end py-4">
+                        <ul className="flex items-center gap-2 justify-end py-4 font-bold">
                             <li className="hover:shadow-liHeader hover:cursor-pointer hover:bg-indigo-700 rounded py-1 px-2 duration-300">
                                 Postagens
                             </li>
@@ -24,7 +37,7 @@ function Header() {
                                 Perfil
                             </li>
                             <li className="hover:shadow-liHeader hover:cursor-pointer hover:bg-indigo-700 rounded py-1 px-2 duration-300">
-                                <Link to="/login">Sair</Link>
+                                <Link to="" onClick={logout}>Sair</Link>
                             </li>
                         </ul>
                     </nav>
@@ -34,4 +47,4 @@ function Header() {
     );
 };
 
-export default Header;
+export default Navbar;

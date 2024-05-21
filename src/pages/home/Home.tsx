@@ -9,7 +9,7 @@ function Home() {
                             Expresse aqui seus pensamentos e opniões
                         </p>
                         <div className="flex justify-around gap-4">
-                            <div className="hover:bg-indigo-700 hover:pointer hover:shadow-lg rounded text-white border-white border-solid border-2 py-2 px-4">
+                            <div className="hover:bg-indigo-700 hover:pointer hover:shadow-lg rounded text-white font-bold border-white border-solid border-2 mt-4 py-2 px-4">
                                 Nova Postagem
                             </div>
                         </div>

@@ -1,11 +1,12 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Usuario from "../../models/Usuario";
 import { cadastrarUsuario } from "../../services/Service";
 import "./Cadastro.css";
 
 function Cadastro() {
-    let navigate = useNavigate();
+    
+    const navigate = useNavigate();
 
     const [confirmaSenha, setConfirmaSenha] = useState<string>("");
 
@@ -27,11 +28,11 @@ function Cadastro() {
 
     useEffect(() => {
         if (usuarioResposta.id !== 0) {
-            back();
+            retornar();
         }
     }, [usuarioResposta]);
 
-    function back() {
+    function retornar() {
         navigate("/login");
     }
 
@@ -68,6 +69,8 @@ function Cadastro() {
             setConfirmaSenha(""); // Reinicia o campo de Confirmar Senha
         }
     }
+
+    // console.log(JSON.stringify(usuario));
 
     return (
         <>
@@ -147,15 +150,11 @@ function Cadastro() {
                         />
                     </div>
                     <div className="flex justify-around w-full gap-8">
-                        <button
-                            className="rounded text-white bg-red-400 hover:bg-red-700 w-1/2 py-2"
-                            onClick={back}
+                        <button className="rounded text-white bg-red-400 hover:bg-red-700 w-1/2 py-2" onClick={retornar}
                         >
                             Cancelar
                         </button>
-                        <button
-                            className="rounded text-white bg-indigo-400 hover:bg-indigo-900 w-1/2 py-2"
-                            type="submit"
+                        <button className="rounded text-white bg-indigo-400 hover:bg-indigo-900 w-1/2 py-2" type="submit"
                         >
                             Cadastrar
                         </button>
