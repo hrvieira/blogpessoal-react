@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import CardTemas from "../card-temas/CardTemas";
+import CardTemas from "../cardtemas/CardTemas";
 import { useNavigate } from "react-router-dom";
 import Tema from "../../../models/Tema";
 import { AuthContext } from "../../../contexts/AuthContext";
