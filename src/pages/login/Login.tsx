@@ -1,8 +1,9 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import { ChangeEvent, useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import UsuarioLogin from "../../models/UsuarioLogin";
+import { RotatingLines } from "react-loader-spinner";
 
 function Login() {
 
@@ -31,12 +32,14 @@ function Login() {
         e.preventDefault();
         handleLogin(usuarioLogin);
     }
-        
+    
     return (
         <>
             <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold ">
-                <form className="flex justify-center items-center flex-col w-1/2 gap-4"
-                onSubmit={login}>
+                <form
+                    className="flex justify-center items-center flex-col w-1/2 gap-4"
+                    onSubmit={login}
+                >
                     <h2 className="text-slate-900 text-5xl ">Entrar</h2>
                     <div className="flex flex-col w-full">
                         <label htmlFor="usuario">Usuário</label>
@@ -70,12 +73,24 @@ function Login() {
                         type="submit"
                         className="rounded bg-indigo-400 hover:bg-indigo-900 text-white w-1/2 py-2 flex justify-center"
                     >
-                        <span>Entrar</span>
+                        {isLoading ? (
+                            <RotatingLines
+                                strokeColor="white"
+                                strokeWidth="5"
+                                animationDuration="0.75"
+                                width="24"
+                                visible={true}
+                            />
+                        ) : (
+                            <span>Entrar</span>
+                        )}
                     </button>
 
                     <hr className="border-slate-800 w-full" />
-
-                    <p>Ainda não tem uma conta? </p>
+                    <div className="flex gap-1">
+                        <p>Ainda não tem uma conta? </p>
+                        <Link to="/cadastro">Cadastre-se</Link>
+                    </div>
                 </form>
                 <div className="fundoLogin hidden lg:block"></div>
             </div>
