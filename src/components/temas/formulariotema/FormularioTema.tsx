@@ -22,7 +22,7 @@ function FormTema() {
                 headers: { Authorization: token },
             });
         } catch (error: any) {
-            if (error.toString().includes("403")) {
+            if (error.toString().includes("401")) {
                 alert("O token Expirou!");
                 handleLogout();
             }
@@ -78,7 +78,7 @@ function FormTema() {
                 });
                 alert("O Tema foi cadastrado com sucesso!");
             } catch (error: any) {
-                if (error.toString().includes("403")) {
+                if (error.toString().includes("401")) {
                     alert("O Token Expirou!");
                     handleLogout();
                 } else {

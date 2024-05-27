@@ -1,5 +1,6 @@
 import ListaPostagens from "../../components/postagens/listapostagens/ListaPostagens";
 import homeLogo from "../../assets/home.png"
+import ModalPostagem from "../../components/postagens/modalpostagem/ModalPostagem";
 
 function Home() {
     return (
@@ -11,9 +12,11 @@ function Home() {
                         <p className="text-xl">
                             Expresse aqui seus pensamentos e opniões
                         </p>
+
                         <div className="flex justify-around gap-4">
-                            <div className="hover:bg-indigo-700 hover:pointer hover:shadow-lg rounded text-white font-bold border-white border-solid border-2 mt-4 py-2 px-4">
-                                Nova Postagem
+                            <ModalPostagem />
+                            <div className="hover:bg-indigo-700 hover:text-white bg-white hover:pointer hover:shadow-lg rounded text-indigo-900 font-bold border-white border-solid border-2 mt-4 py-2 px-4">
+                                Ver postagens
                             </div>
                         </div>
                     </div>
