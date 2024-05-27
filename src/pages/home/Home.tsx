@@ -1,3 +1,6 @@
+import ListaPostagens from "../../components/postagens/listapostagens/ListaPostagens";
+import homeLogo from "../../assets/home.png"
+
 function Home() {
     return (
         <>
@@ -17,13 +20,14 @@ function Home() {
 
                     <div className="flex justify-center">
                         <img
-                            src="https://i.imgur.com/VpwApCU.png"
+                            src={homeLogo}
                             alt="Imagem da Página Home"
                             className="w-2/4 tablet:w-2/3"
                         />
                     </div>
                 </div>
             </div>
+            <ListaPostagens />
         </>
     );
 }

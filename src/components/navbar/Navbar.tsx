@@ -7,7 +7,7 @@ function Navbar() {
 
     const navigate = useNavigate()
 
-    const { handleLogout } = useContext(AuthContext);
+    const { usuario, handleLogout } = useContext(AuthContext);
 
     function logout() {
         handleLogout();
@@ -27,7 +27,7 @@ function Navbar() {
                     <nav>
                         <ul className="flex items-center gap-2 justify-end py-4 font-bold">
                             <li className="hover:shadow-liHeader hover:cursor-pointer hover:bg-indigo-700 rounded py-1 px-2 duration-300">
-                                Postagens
+                                <Link to="/postagens">Postagens</Link>
                             </li>
                             <li className="hover:shadow-liHeader hover:cursor-pointer hover:bg-indigo-700 rounded py-1 px-2 duration-300">
                                 <Link to="/temas">Temas</Link>
