@@ -33,7 +33,7 @@ function Navbar() {
                                 <Link to="/temas">Temas</Link>
                             </li>
                             <li className="hover:shadow-liHeader hover:cursor-pointer hover:bg-indigo-700 rounded py-1 px-2 duration-300">
-                                <Link to="/cadastroTema">Cadastrar Tema</Link>
+                                <Link to="/cadastrartema">Cadastrar Tema</Link>
                             </li>
                             <li className="hover:shadow-liHeader hover:cursor-pointer hover:bg-indigo-700 rounded py-1 px-2 duration-300">
                                 Perfil
