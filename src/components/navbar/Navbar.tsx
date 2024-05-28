@@ -11,7 +11,6 @@ function Navbar() {
 
     function logout() {
         handleLogout();
-        alert("O usuário foi desconectado com sucesso!");
         navigate('/login')
     }
 
@@ -36,7 +35,7 @@ function Navbar() {
                                 <Link to="/cadastrartema">Cadastrar Tema</Link>
                             </li>
                             <li className="hover:shadow-liHeader hover:cursor-pointer hover:bg-indigo-700 rounded py-1 px-2 duration-300">
-                                Perfil
+                                <Link to="/perfil">Perfil</Link>
                             </li>
                             <li className="hover:shadow-liHeader hover:cursor-pointer hover:bg-indigo-700 rounded py-1 px-2 duration-300">
                                 <Link to="" onClick={logout}>
