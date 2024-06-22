@@ -30,13 +30,6 @@ function ListaTemas() {
     }
 
     useEffect( () => {
-        if(token === '') {
-            alert("Você precisa estar logado.");
-            navigate('/login');
-        }
-    }, [token]);
-
-    useEffect( () => {
         buscarTemas()
     }, [temas.length])
 

@@ -16,7 +16,7 @@ function Navbar() {
 
     return (
         <div className="bg-indigo-900 flex justify-center ">
-            <div className="container grid grid-cols-2 text-white w-11/12">
+            <div className="container grid max-sm:grid-cols-1 grid-cols-2 text-white w-11/12">
                 <div className="flex items-center py-4">
                     <Link to="/" className="text-2xl font-bold">
                         Blog Pessoal
