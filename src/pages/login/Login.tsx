@@ -87,7 +87,7 @@ function Login() {
                     </button>
 
                     <hr className="border-slate-800 w-full" />
-                    <div className="flex gap-1">
+                    <div className="flex max-sm:flex-col gap-1">
                         <p>Ainda não tem uma conta? </p>
                         <Link to="/cadastro">Cadastre-se</Link>
                     </div>
